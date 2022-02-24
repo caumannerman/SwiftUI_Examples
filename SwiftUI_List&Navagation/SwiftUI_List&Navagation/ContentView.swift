@@ -84,7 +84,7 @@ struct ContentView: View {
             
         Divider()
             
-            //4. 일반적으로 List뷰는 이동하는 수단이다.
+            //4. 일반적으로 List뷰는 (세부 페이지로) 이동하는 수단이다.
             // List선언부를 NavigationView로 감싸고, 각 행을 NavigationLink로 감싸면 됨
             // NavigationView와 NavigationLInk를 이용하여 리스트의 항목 클릭 시, 대상 뷰로 이동하도록 !
             NavigationView{
