@@ -21,7 +21,7 @@ struct ContentView: View {
     //상태 바인딩 예제를 위한 state property
     @State private var wifiEnabled: Bool = true
     
-    var colors: [Color] = [.black, .red, .green, .blue]
+    var colors: [Color] = [SwiftUI.Color.black, SwiftUI.Color.red, SwiftUI.Color.green, SwiftUI.Color.blue]
     var colornames = ["Black", "Red", "Green", "Blue"]
   
     
