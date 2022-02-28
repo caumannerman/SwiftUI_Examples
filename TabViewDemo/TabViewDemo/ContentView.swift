@@ -13,7 +13,7 @@ struct ContentView: View {
     
     //State properties for Context Menu Example
     
-    @State private var foregroundColor: Color = Color.black
+    @State private var foregroundColor: Color = Color.blue
     @State private var backgroundColor: Color = Color.white
     
     var body: some View {
