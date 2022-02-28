@@ -9,9 +9,18 @@ import UIKit
 
 class SeguePushViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    var name: String?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("SegueWay ViewController viewDidLoad() function call")
+        //전달받은 내용을 nameLabel에 표시
+        if let name = name {
+            self.nameLabel.text = name
+            self.nameLabel.sizeToFit()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -7,14 +7,22 @@
 
 import UIKit
 
+
 class CodePushViewController: UIViewController {
 
-    @IBOutlet var nameLabel: UIView!
+
+    @IBOutlet weak var nameLabel: UILabel!
     var name: String?
+    //delegate는 weak 해줘야한다!
+    weak var delegate2: SendDataDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("CodePush UIViewCtrler viewDidLoad() function call")
+        if let name = name {
+            self.nameLabel.text = name
+            self.nameLabel.sizeToFit()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +46,7 @@ class CodePushViewController: UIViewController {
     }
 
     @IBAction func tapBackButton(_ sender: UIButton) {
+        self.delegate2?.sendData(name: "YangJ")
         self.navigationController?.popViewController(animated:true)
     }
 }
