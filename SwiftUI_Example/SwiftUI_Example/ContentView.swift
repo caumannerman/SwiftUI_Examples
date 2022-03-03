@@ -40,35 +40,37 @@ struct ContentView: View {
             HStack{
                 Image(systemName: "airplane")
                 Text("Flight times: ")
-                Text("LondonLondon").layoutPriority(1)
+                Text("LineLimit&layoutPriority").layoutPriority(1)
             }.font(.largeTitle)
                 .lineLimit(1) // 표현될 줄의 수를 나타낸다
          
             // min,max W,H를 설정하여 값의 변화에 유연한 프레임 가질 수 있다.
-            Text("Hello swiftUI From YangJunSik")
+            Text("Hello swiftUI frame size practice")
                 .font(.largeTitle)
-               
-                .frame(minWidth: 100, maxWidth: 200, minHeight: 100, maxHeight:100, alignment: .center)
-                .border(Color.black)
+                .frame(minWidth: 100, maxWidth: 300, minHeight: 100, maxHeight:100, alignment: .center)
+                .border(Color.cyan)
             // GeometryReader를 이용하여 frame의 크기를 기준으로 내부 frame크기, font크기를 수정할 수 있다.
             GeometryReader { geometry in
                 HStack{
                     
-                    Text("Hello World, how ar you?")
+                    Text("View size using GeometryReader")
                         .font(.largeTitle)
                         .frame(width: geometry.size.width / 2,
-                               height: (geometry.size.height / 4) * 3)
+                               height: (geometry.size.height / 2) )
                         .border(Color.red)
-                    Text("Goodbye World, haha")
+                    Text("Geometry\n Reader")
                         .font(.largeTitle)
-                        .frame(width: geometry.size.width / 3,
-                               height: geometry.size.height / 4)
-                        .border(Color.cyan)
+                        .frame(width: geometry.size.width / 3 + 30,
+                               height: geometry.size.height / 2, alignment: .center)
+                        .border(Color.mint)
                         
                     
-                }
+                        
+                    
+                }.frame(width: 400, height: 400)
+                    
                 .border(Color.black)
-            }
+            }.frame(width:400, height:400)
             
         }
     }
