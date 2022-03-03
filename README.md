@@ -44,15 +44,15 @@ You can change the color of the text using the picker.
 
 ##### -> 상태에 대한 기본 형태
 ##### -> @state 프로퍼티 "래퍼"를 사용해 선언
-##### -> 상태값으 해당 View에 속하 것이므로 private로 선언 
+##### -> 상태값의 해당 View에 속하 것이므로 private로 선언 
 ###### ==> state property값 변경 -> 해당 프로퍼티에 의존하는 모든 View가 update됨 
 
 ### 뷰와 state property  바인딩
 
-##### -> 프로퍼 이름 앞에 '$'를 붙여 Binding 
+##### -> 프로퍼티 이름 앞에 '$'를 붙여 Binding 
 
 # 3. Observable Object Example
 
 ### 3-1. Observable Object
 
-###
+##### Combine 프레임워크에 포함되어있음 
