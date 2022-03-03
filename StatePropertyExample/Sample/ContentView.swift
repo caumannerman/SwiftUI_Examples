@@ -21,15 +21,14 @@ struct ContentView: View {
     //상태 바인딩 예제를 위한 state property
     @State private var wifiEnabled: Bool = true
     
-    var colors: [Color] = [SwiftUI.Color.black, SwiftUI.Color.red, SwiftUI.Color.green, SwiftUI.Color.blue]
-    var colornames = ["Black", "Red", "Green", "Blue"]
+    var colors: [Color] = [.black, .cyan, .mint, .brown]
+    var colornames = ["Black", "CYAN", "MINT", "BROWN"]
   
     
     var body: some View {
         
         VStack{
-        Spacer()
-           
+            Spacer()
             Text(text)
                 .font(.largeTitle)
                 .fontWeight(.heavy)
@@ -39,12 +38,11 @@ struct ContentView: View {
                 .foregroundColor(self.colors[self.colorIndex])
             
             Spacer()
+            
             Divider()
             
             Slider(value: $rotation, in: 0...360, step: 0.1)
                 .padding(30)
-            
-            
             // 소숫점 첫 째 자리까지만 나오도록
             Text(String( floor( rotation * 10 ) / 10))
             
@@ -58,9 +56,7 @@ struct ContentView: View {
                 ForEach (0 ..< colornames.count) {
                     Text(self.colornames[$0])
                         .foregroundColor(self.colors[$0])
-                      
                 }
-                
             }.padding()
             
             // wifiEnabled를 상태 binding해준다!!!
