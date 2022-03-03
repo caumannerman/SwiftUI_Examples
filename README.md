@@ -58,6 +58,13 @@ You can change the color of the text using the picker.
 
 # 3. Observable Object Example
 
-### 3-1. Observable Object
+<p>
+<img width="200" alt="스크린샷 2022-03-03 오후 5 06 04" src="https://user-images.githubusercontent.com/75043852/156522842-afd38fee-85a3-4465-a90b-d511803782dd.png">
+<img width="200" alt="스크린샷 2022-03-03 오후 5 06 14" src="https://user-images.githubusercontent.com/75043852/156522858-2190bf63-f7f4-4063-b007-beb30e579527.png">
+</p>
 
-##### Combine 프레임워크에 포함되어있음 
+
+### 3-1. Observable Object
+  
+##### Combine 프레임워크에 포함되어있음
+##### ObservableObject 
