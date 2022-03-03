@@ -47,9 +47,14 @@ You can change the color of the text using the picker.
 ##### -> 상태값의 해당 View에 속하 것이므로 private로 선언 
 ###### ==> state property값 변경 -> 해당 프로퍼티에 의존하는 모든 View가 update됨 
 
-### 뷰와 state property  바인딩
+### 2-2. 뷰와 state property  바인딩
 
 ##### -> 프로퍼티 이름 앞에 '$'를 붙여 Binding 
+
+### 2-3. Spacer(), Divider()
+
+##### -> Spacer() : 공간을 두고, 같은 클로저 내의 View를 한 쪽으로 밀어서 배치 
+##### -> Divider() : 구분 선을 그려 View들을 양 쪽으로 구분지어 배치
 
 # 3. Observable Object Example
 
