@@ -21,7 +21,7 @@
 ### 1-3. Camera 노치 무시 ( 안전영역 ) : .edgesIgnoringSafeArea(.all) 로 설정
 
 ### 1-4. GeometryReader : 프레임뷰들을 담고있는 컨테이너 크기에 따라 조절되도록 구현할 수 있다.
--> GeometryReader { geometry in  ~~~ } 내부에서 geometry.size.width  혹은 geometry.size.height를 이용해서 수치적을 내부 뷰들으 크기를 조절
+-> GeometryReader { geometry in  ~~~ } 내부에서 geometry.size.width  혹은 geometry.size.height를 이용해서 수치적으로 내부 뷰들의 크기를 조절
 
 
 # 2.SwiftUI_StateProperty_Example
@@ -43,8 +43,8 @@ You can change the color of the text using the picker.
 ### 2-1. State Property
 
 ##### -> 상태에 대한 기본 형태
-##### -> @state 프로퍼티 "래퍼"를 사용해 선언
-##### -> 상태값의 해당 View에 속하 것이므로 private로 선언 
+##### -> @State 프로퍼티 "래퍼"를 사용해 선언
+##### -> 해당 View에 속하 것이므로 private로 선언 
 ###### ==> state property값 변경 -> 해당 프로퍼티에 의존하는 모든 View가 update됨 
 
 ### 2-2. 뷰와 state property  바인딩
@@ -66,5 +66,16 @@ You can change the color of the text using the picker.
 
 ### 3-1. Observable Object
   
-##### Combine 프레임워크에 포함되어있음
-##### ObservableObject 
+##### -> Combine 프레임워크에 포함되어있음
+##### -> ObservableObject 프로토콜을 따르는 클래스 혹은 구조체 형태
+##### -> 타이머나 알림 이벤트 처리에도 사용
+##### -> 데이터값을 publish하고, Observer객체가 게시자를 "구독"하여 변경시마다 업데이트한다. ( @ObservedObject 프로퍼티 래퍼로 객체 구독 )
+##### -> ObservableObject로 선언, @Published 프로퍼티 래퍼로 게시 
+
+### 3-2. Environment Object
+##### UI 밖에 있으며, 여러 뷰가 접근해야하는 데이터? -> Environment Object 
+##### -> ObservableObject로 선언, @Published 프로퍼티 래퍼로 게시 
+##### -> 선언은 Observable Object와 같이 ObservableObject 프로토콜 따라야 함 ( 참조는 @EnvironmentObject 프로퍼티 래퍼로 참조 )
+##### -> SwiftUI환경에 저장됨
+##### -> View에서 View로 전달할 필요 없이 어디서든 접근 가능
+
