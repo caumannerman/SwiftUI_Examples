@@ -63,6 +63,10 @@ You can change the color of the text using the picker.
 <img width="200" alt="스크린샷 2022-03-03 오후 5 06 14" src="https://user-images.githubusercontent.com/75043852/156522858-2190bf63-f7f4-4063-b007-beb30e579527.png">
 </p>
 
+ObservableObject 프로토콜을 따르는 TimerData class를 선언하고, timerCount 프로퍼티를 @Published 프로퍼티 래퍼를 통해 게시한다.
+ContentView에서 @ObservedObject 프로퍼티 래퍼를 통해 timerData객체를 생성하고, NavigationView와 NavigationLink를 통해 SecondView라는 destination으로 timerData참조를 전달한다.
+화면 전환에 관계없이 둘은 같은 객체를 참조하여, 이어지며 시간을 count하는 것을 확인할 수 있다.
+
 
 ### 3-1. Observable Object
   
@@ -78,4 +82,17 @@ You can change the color of the text using the picker.
 ##### -> 선언은 Observable Object와 같이 ObservableObject 프로토콜 따라야 함 ( 참조는 @EnvironmentObject 프로퍼티 래퍼로 참조 )
 ##### -> SwiftUI환경에 저장됨
 ##### -> View에서 View로 전달할 필요 없이 어디서든 접근 가능
+
+# 4. Stack&AlignmentGuide Example
+
+<p>
+<img width="200" alt="스크린샷 2022-03-04 오후 3 56 44" src="https://user-images.githubusercontent.com/75043852/156714789-d8293950-3d39-4e53-8fbe-358fea75e186.png">
+<img width="200" alt="스크린샷 2022-03-04 오후 3 57 02" src="https://user-images.githubusercontent.com/75043852/156714799-9dd688aa-44e1-40f4-aeb2-3ec6e6ded0dd.png">
+<img width="200" alt="스크린샷 2022-03-04 오후 3 57 12" src="https://user-images.githubusercontent.com/75043852/156714805-50eae3ae-bdb9-4375-a592-35fc476f63d7.png">
+</p>
+
+GeometryReader와 border modifier, .firstTextBaseline과 같은 정렬 기준
+alignmentGuide를 사용한 스택 내 개별 위치 조정 ( 부모 Stack의 정렬 기준과 같은 정렬기준을 넣어줘야 적용이 된다 )
+VerticalAlignment, HorizontalAlignment에 extension을 추가해 static으로서 사용가능한 정렬 기준을 만들어준다.
+표준 정렬타입으로는 다른 스택 간 정렬이 불가능한데, 보라색 원을 오른쪽 VStack의 세 번째 사각형 옆에 정렬이 가능했다.(alignmentGuide)
 
