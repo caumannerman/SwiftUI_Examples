@@ -22,10 +22,10 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding()
-                Button(action: resetCount) {
+                Button(action: timerData.resetCount) {
                     Text("Reset Counter")
                 }
-                
+                // 다음 View에 Observable Object 참조를 전달한다. 
                 NavigationLink(destination: SecondView(timerData: timerData)) {
                     Text("Next Screen")
                 }
@@ -34,9 +34,7 @@ struct ContentView: View {
             
         }
     }
-    func resetCount() {
-        timerData.resetCount()
-    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
